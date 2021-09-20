@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 702983451552819931}
   - component: {fileID: 702983451552819928}
   - component: {fileID: 6934955880995175305}
-  - component: {fileID: -5751266633799648864}
   - component: {fileID: 2658351907964941222}
   - component: {fileID: 4242279903485883679}
+  - component: {fileID: 7727948931132581385}
   m_Layer: 0
-  m_Name: Player
+  m_Name: NetworkPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702983451552819929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.09, y: 0, z: -0.34}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 702983453242067014}
@@ -69,23 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &-5751266633799648864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702983451552819929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NetworkInstanceId: 0
-  PrefabHash: 1897319656204293034
-  PrefabHashGenerator: Player
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
 --- !u!114 &2658351907964941222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +133,27 @@ MonoBehaviour:
   leftGameHand: {fileID: 149969979278637999}
   rightHandController: {fileID: 702983452825004414}
   rightGameHand: {fileID: 3300639179395431255}
-  useSimulator: 1
+  useSimulator: 0
   simulatorPrefab: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
   cameraObject: {fileID: 702983451699245502}
   cameraPoseDriver: {fileID: 702983451699245500}
+--- !u!114 &7727948931132581385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702983451552819929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkInstanceId: 0
+  PrefabHash: 12678914256364931730
+  PrefabHashGenerator: NetworkPlayer
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
 --- !u!1 &702983451699245501
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,21 +960,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3564482899700724026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4570564207846576740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SendRate: 0.1
-  m_Animator: {fileID: 4570564207839158738}
-  m_TrackedParamFlags: 3
 --- !u!1 &4836818414566602628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,14 +1066,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftGameHand
       objectReference: {fileID: 0}
-    - target: {fileID: 5010527586465946929, guid: 568ee76a8f988e04b82446ca7e5f3657, type: 3}
-      propertyPath: _gripAction.m_Reference
-      value: 
-      objectReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 5010527586465946929, guid: 568ee76a8f988e04b82446ca7e5f3657, type: 3}
-      propertyPath: _triggerAction.m_Reference
-      value: 
-      objectReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6205102918431185748, guid: 568ee76a8f988e04b82446ca7e5f3657, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1151,16 +1128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228dab2872770e048b74967acb584d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4570564207846576740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8714979041116321018, guid: 568ee76a8f988e04b82446ca7e5f3657, type: 3}
-  m_PrefabInstance: {fileID: 5160057194141001374}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4570564207839158738 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8714979041106921292, guid: 568ee76a8f988e04b82446ca7e5f3657, type: 3}
-  m_PrefabInstance: {fileID: 5160057194141001374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1053137308359336073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5260567618355529239, guid: 568ee76a8f988e04b82446ca7e5f3657, type: 3}
@@ -1177,14 +1144,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightGameHand
       objectReference: {fileID: 0}
-    - target: {fileID: 5010527586465946929, guid: 9d2bf7621d11e7145807bd26c91e0ad2, type: 3}
-      propertyPath: _gripAction.m_Reference
+    - target: {fileID: 3767787098909599991, guid: 9d2bf7621d11e7145807bd26c91e0ad2, type: 3}
+      propertyPath: gripAction.m_Reference
       value: 
-      objectReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 5010527586465946929, guid: 9d2bf7621d11e7145807bd26c91e0ad2, type: 3}
-      propertyPath: _triggerAction.m_Reference
+      objectReference: {fileID: 3312045459160259344, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 3767787098909599991, guid: 9d2bf7621d11e7145807bd26c91e0ad2, type: 3}
+      propertyPath: triggerAction.m_Reference
       value: 
-      objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+      objectReference: {fileID: -6986061481639665588, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6205102918431185748, guid: 9d2bf7621d11e7145807bd26c91e0ad2, type: 3}
       propertyPath: m_RootOrder
       value: 0

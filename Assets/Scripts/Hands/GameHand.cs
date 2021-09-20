@@ -7,7 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Hands
 {
-    [RequireComponent(typeof(NetworkHandState))]
     public class GameHand : BaseHand
     {
         [SerializeField] private Animator handAnimator;
