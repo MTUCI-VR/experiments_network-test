@@ -1,4 +1,5 @@
 using MLAPI;
+using MLAPI.SceneManagement;
 using MLAPI.Transports.UNET;
 using PopovRadio.Scripts.Tools.AppEvents;
 using TMPro;
@@ -11,7 +12,7 @@ public class ConnectionUI : NetworkBehaviour
 
     private UNetTransport _networkTransport;
 
-    public override void NetworkStart()
+    private void Start()
     {
         _networkTransport = NetworkManager.Singleton.gameObject.GetComponent<UNetTransport>();
     }
@@ -22,7 +23,7 @@ public class ConnectionUI : NetworkBehaviour
 
         OnConnected.Invoke();
 
-        SceneLoader.Instance.LoadScene("SampleScene");
+        NetworkSceneManager.SwitchScene("SampleScene");
     }
 
     public void OnConnectClicked()
@@ -31,7 +32,5 @@ public class ConnectionUI : NetworkBehaviour
         NetworkManager.Singleton.StartClient();
 
         OnConnected.Invoke();
-
-        SceneLoader.Instance.LoadScene("SampleScene");
     }
 }

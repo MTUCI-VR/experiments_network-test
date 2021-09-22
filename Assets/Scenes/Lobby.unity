@@ -688,6 +688,7 @@ GameObject:
   - component: {fileID: 1154570825}
   - component: {fileID: 1154570824}
   - component: {fileID: 1154570826}
+  - component: {fileID: 1154570827}
   m_Layer: 5
   m_Name: ActionButtons
   m_TagString: Untagged
@@ -772,6 +773,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ipInput: {fileID: 278025799}
   OnConnected: {fileID: 11400000, guid: b3068f6265754fe459559513ad3c858c, type: 2}
+--- !u!114 &1154570827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154570822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkInstanceId: 0
+  PrefabHash: 9037092955669912642
+  PrefabHashGenerator: ActionButtons
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
 --- !u!1 &1250763486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,6 +1699,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 604547937349379937, guid: 2b1aa155dae56e141ac6b5a112d38943, type: 3}
+      propertyPath: NetworkConfig.NetworkPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 604547937349379937, guid: 2b1aa155dae56e141ac6b5a112d38943, type: 3}
+      propertyPath: NetworkConfig.NetworkPrefabs.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 7128074341826837046, guid: fb5ff80b81a1c5947967090d966e753a, type: 3}
     - target: {fileID: 604547937349379943, guid: 2b1aa155dae56e141ac6b5a112d38943, type: 3}
       propertyPath: m_Name
       value: NetworkManager
@@ -1793,11 +1819,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1253794147371058646, guid: ad8afe485c93b5743b6dfde10415be1e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9951505
       objectReference: {fileID: 0}
     - target: {fileID: 1253794147371058646, guid: ad8afe485c93b5743b6dfde10415be1e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.09836449
       objectReference: {fileID: 0}
     - target: {fileID: 1253794147371058646, guid: ad8afe485c93b5743b6dfde10415be1e, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1809,7 +1835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1253794147371058646, guid: ad8afe485c93b5743b6dfde10415be1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -11.29
       objectReference: {fileID: 0}
     - target: {fileID: 1253794147371058646, guid: ad8afe485c93b5743b6dfde10415be1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
